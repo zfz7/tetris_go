@@ -27,4 +27,4 @@ jobs:
         with:
           go-version: 1.19
       - name: Setup fake build dir && test
-        run: cd backend && mkdir build && touch index.html && go test
+        run: cd backend && mkdir build && touch build/index.html && go test
