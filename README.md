@@ -9,13 +9,13 @@ Full Stack App (Backend:Go/Gin Frontend:Typescript/React DB:Postgres)
   - [X] backend responds to GET call
   - [ ] backend reads/writes to Postgres DB 
   - [X] backend tests 
-- [ ] Cypress test for full application
-- [ ] Building app
+- [X] Cypress test for full application
+- [X] Building app
   - [X] Frontend & backend builds into single thing?
-- [ ] Github pipeline
+- [X] Github pipeline
   - [X] Frontend tests
   - [X] Backend tests
-  - [ ] Cypress tests
+  - [X] Cypress tests
 - [ ] Deploy app
   - [ ] TLS certs
   - [ ] deploy application with ./deploy.sh
