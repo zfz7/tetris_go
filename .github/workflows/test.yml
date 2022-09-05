@@ -23,6 +23,8 @@ jobs:
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
       - uses: actions/checkout@v2
-      - uses: borales/actions-yarn@v3.0.0
+      - uses: actions/setup-node@v3
         with:
-          cmd: test # will run `yarn test` command
+          node-version: 16
+      - run: cd frontend
+      - run: yarn test
