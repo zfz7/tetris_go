@@ -26,5 +26,4 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: cd frontend
-      - run: yarn test
+      - run: cd frontend && yarn test
