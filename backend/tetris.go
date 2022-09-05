@@ -17,7 +17,7 @@ var (
 )
 
 // TODO save this in DB
-var visitorCount int = 0
+var visitorCount = 0
 
 func main() {
 	e := echo.New()
@@ -30,9 +30,9 @@ type HelloDTO struct {
 	Message  string `json:"message" xml:"message"`
 }
 func helloWorldEndPoint(context echo.Context) error {
-	u := &HelloDTO{
+	dto := &HelloDTO{
 		Message:  fmt.Sprint("You are visitor ", visitorCount),
 	}
 	visitorCount++
-	return context.JSON(http.StatusOK, u)
+	return context.JSON(http.StatusOK, dto)
 }
