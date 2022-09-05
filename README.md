@@ -2,9 +2,8 @@
 Full Stack App (Backend:Go/Gin Frontend:Typescript/React DB:Postgres)
 ## Short term goals
 - [ ] Simple react frontend: typescript/react
-  - [ ] frontend makes a backend GET call
-  - [ ] frontend makes a backend POST call
-  - [ ] frontend tests 
+  - [X] frontend makes a backend GET call
+  - [X] frontend tests 
 - [ ] Simple backend: go/gin
   - [ ] backend serves react app
   - [ ] backend responds to GET call
@@ -15,7 +14,7 @@ Full Stack App (Backend:Go/Gin Frontend:Typescript/React DB:Postgres)
 - [ ] Building app
   - [ ] Frontend & backend builds into single thing?
 - [ ] Github pipeline
-  - [ ] Frontend tests
+  - [X] Frontend tests
   - [ ] Backend tests
   - [ ] Cypress tests
 - [ ] Deploy app
