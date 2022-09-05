@@ -1,18 +1,17 @@
 # tetris_go
 Full Stack App (Backend:Go/Gin Frontend:Typescript/React DB:Postgres)
 ## Short term goals
-- [ ] Simple react frontend: typescript/react
+- [X] Simple react frontend: typescript/react
   - [X] frontend makes a backend GET call
   - [X] frontend tests 
 - [ ] Simple backend: go/gin
-  - [ ] backend serves react app
+  - [X] backend serves react app
   - [ ] backend responds to GET call
-  - [ ] backend responds to POST call
   - [ ] backend reads/writes to Postgres DB 
   - [ ] backend tests 
 - [ ] Cypress test for full application
 - [ ] Building app
-  - [ ] Frontend & backend builds into single thing?
+  - [X] Frontend & backend builds into single thing?
 - [ ] Github pipeline
   - [X] Frontend tests
   - [ ] Backend tests
