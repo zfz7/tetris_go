@@ -3,24 +3,36 @@ package main
 import (
 	"embed"
 	"fmt"
-	"io/fs"
+	"github.com/labstack/echo/v4"
 	"net/http"
 )
 
-//go:embed build
-var frontendFiles embed.FS
+var (
+	//go:embed build
+	dist embed.FS
+	//go:embed build/index.html
+	indexHTML      embed.FS
+	buildDirFS     = echo.MustSubFS(dist, "build")
+	buildIndexHtml = echo.MustSubFS(indexHTML, "build")
+)
+
+// TODO save this in DB
+var visitorCount int = 0
 
 func main() {
-	fmt.Println("Starting Server")
-	http.Handle("/", http.FileServer(getFileSystem()))
-	http.ListenAndServe(":8080", nil)
+	e := echo.New()
+	e.FileFS("/", "index.html", buildIndexHtml)
+	e.StaticFS("/", buildDirFS)
+	e.GET("/api/hello", helloWorldEndPoint)
+	e.Logger.Fatal(e.Start(":8080"))
 }
-
-func getFileSystem() http.FileSystem {
-	fsys, err := fs.Sub(frontendFiles, "build")
-	if err != nil {
-		panic(err)
+type HelloDTO struct {
+	Message  string `json:"message" xml:"message"`
+}
+func helloWorldEndPoint(context echo.Context) error {
+	u := &HelloDTO{
+		Message:  fmt.Sprint("You are visitor ", visitorCount),
 	}
-
-	return http.FS(fsys)
+	visitorCount++
+	return context.JSON(http.StatusOK, u)
 }

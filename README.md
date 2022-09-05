@@ -4,9 +4,9 @@ Full Stack App (Backend:Go/Gin Frontend:Typescript/React DB:Postgres)
 - [X] Simple react frontend: typescript/react
   - [X] frontend makes a backend GET call
   - [X] frontend tests 
-- [ ] Simple backend: go/gin
+- [ ] Simple backend: go/echo
   - [X] backend serves react app
-  - [ ] backend responds to GET call
+  - [X] backend responds to GET call
   - [ ] backend reads/writes to Postgres DB 
   - [ ] backend tests 
 - [ ] Cypress test for full application
