@@ -42,4 +42,4 @@ jobs:
           cache: 'yarn'
           cache-dependency-path: frontend/yarn.lock
       - name: Test
-        run: cd acceptance && yarn test
+        run: cd acceptance && yarn install && yarn test
