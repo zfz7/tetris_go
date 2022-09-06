@@ -1,5 +1,5 @@
 # tetris_go
-Full Stack App (Backend:Go/Gin Frontend:Typescript/React DB:Postgres)
+Full Stack App (Backend:Go/Echo Frontend:Typescript/React DB:Postgres)
 ## Short term goals
 - [X] Simple react frontend: typescript/react
   - [X] frontend makes a backend GET call
