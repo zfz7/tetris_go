@@ -6,7 +6,7 @@ describe('app', () => {
   })
 
   beforeEach(() => {
-    // cy.resetDatabase()
+    cy.resetDatabase()
   })
 
   it('lets users view and edit the page banner', () => {

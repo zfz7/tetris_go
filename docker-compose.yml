@@ -1,0 +1,24 @@
+version: '3.7'
+services:
+  dev_db:
+    container_name: tetris_dev_db
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=tetris
+      - POSTGRES_USER=tetris
+      - POSTGRES_DB=tetris
+    ports:
+      - 5434:5432
+  test_db:
+    container_name: tetris_test_db
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=tetris_test
+      - POSTGRES_USER=tetris_test
+      - POSTGRES_DB=tetris_test
+    ports:
+      - 5433:5432
+
+volumes:
+  tetris_dev_db: { }
+  tetris_test_db: { }
