@@ -1,4 +1,4 @@
-# tetris_go
+# Tetris_go
 Full Stack App (Backend:Go/Echo Frontend:Typescript/React DB:Postgres)
 ## Short term goals
 - [X] Simple react frontend: typescript/react
