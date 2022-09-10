@@ -6,4 +6,9 @@ cd frontend
 yarn build
 cd ../
 cp -r ./frontend/build ./backend/server
-go build ./backend/tetris.go
+
+if [ "$1" == 'prod' ]; then
+  GOOS=linux GOARCH=amd64 go build ./backend/tetris.go
+else
+  go build ./backend/tetris.go
+fi
