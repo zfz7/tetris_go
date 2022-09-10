@@ -2,8 +2,8 @@
 
 set -e
 
-#git update-index --refresh
-#git diff-index --quiet HEAD --
+git update-index --refresh
+git diff-index --quiet HEAD --
 
 sshHost="-p 22 -C $TETRIS_SSH_USER@$TETRIS_URL"
 scpHost="$TETRIS_SSH_USER@$TETRIS_URL"
