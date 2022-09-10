@@ -23,7 +23,6 @@ Full Stack App (Backend:Go/Echo Frontend:Typescript/React DB:Postgres)
 TETRIS_URL="tetris.zfz7.org"
 TETRIS_SSH_USER="root"
 
-SSL_KEY_STORE_PASSWORD="example"
 POSTGRES_DB_PASSWORD="example"
 ```
 

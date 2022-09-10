@@ -28,13 +28,12 @@ until [ "$(ssh $sshHost "echo ok")" = "ok" ]; do
 done
 
 ssh $sshHost "mkdir -p ~/app"
-#ssh $sshHost "sudo openssl pkcs12 -export -in /etc/letsencrypt/live/$TETRIS_URL/fullchain.pem -inkey /etc/letsencrypt/live/$TETRIS_URL/privkey.pem -out /etc/letsencrypt/live/$TETRIS_URL/keystore.p12 -name tomcat -CAfile /etc/letsencrypt/live/$TETRIS_URL/chain.pem -caname root -passout pass:$SSL_KEY_STORE_PASSWORD"
 
 ssh $sshHost "sudo rm ~/app/tetris" || echo "No exec file found"
 scp -P "22" ./docker-compose.prod.yml $scpHost:~/app/
-ssh $sshHost "POSTGRES_DB_PASSWORD=${POSTGRES_DB_PASSWORD} docker compose -f ~/app/docker-compose.prod.yml pull" || echo "Docker compose not yet started"
-ssh $sshHost "POSTGRES_DB_PASSWORD=${POSTGRES_DB_PASSWORD} docker compose -f ~/app/docker-compose.prod.yml down" || echo "Docker not running"
+ssh $sshHost "POSTGRES_PASSWORD=${POSTGRES_PASSWORD} docker compose -f ~/app/docker-compose.prod.yml pull" || echo "Docker compose not yet started"
+ssh $sshHost "POSTGRES_PASSWORD=${POSTGRES_PASSWORD} docker compose -f ~/app/docker-compose.prod.yml down" || echo "Docker not running"
 scp -P "22" ./tetris $scpHost:~/app/
-ssh $sshHost "POSTGRES_DB_PASSWORD=${POSTGRES_DB_PASSWORD} docker compose -f ~/app/docker-compose.prod.yml up -d --remove-orphans"
+ssh $sshHost "POSTGRES_PASSWORD=${POSTGRES_PASSWORD} docker compose -f ~/app/docker-compose.prod.yml up -d --remove-orphans"
 ssh $sshHost "docker image prune -f"
-ssh $sshHost "cd ~/app && POSTGRES_PASSWORD=${POSTGRES_PASSWORD} ./tetris &"
+ssh $sshHost "cd ~/app && TETRIS_URL=${TETRIS_URL} POSTGRES_PASSWORD=${POSTGRES_PASSWORD} ./tetris &"

@@ -7,9 +7,9 @@
     "typescript": "^4.8.2"
   },
   "scripts": {
-    "open": "start-server-and-test 'cd .. && SERVER_PORT=8444 POSTGRES_HOST=localhost POSTGRES_PORT=5433 POSTGRES_PASSWORD=tetris_test POSTGRES_USER=tetris_test POSTGRES_DB=tetris_test ./start.sh' tcp:8444 cypress-open",
+    "open": "start-server-and-test 'cd .. && ./start.sh test' tcp:8444 cypress-open",
     "cypress-run": "cypress run",
     "cypress-open": "cypress open",
-    "test": "start-server-and-test 'cd .. && SERVER_PORT=8444 POSTGRES_HOST=localhost POSTGRES_PORT=5433 POSTGRES_PASSWORD=tetris_test POSTGRES_USER=tetris_test POSTGRES_DB=tetris_test ./start.sh' tcp:8444 cypress-run"
+    "test": "start-server-and-test 'cd .. && ./start.sh test' tcp:8444 cypress-run"
   }
 }
