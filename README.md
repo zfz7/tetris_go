@@ -1,5 +1,5 @@
 # Tetris_go
-Full Stack App (Backend:Go/Echo Frontend:Typescript/React DB:Postgres)
+Full Stack App (Backend:Go/Echo Frontend:Typescript/React DB:Postgres). Live [here](https://tetris.zfz7.org): 
 #### Step 1. create an AWS EC2 instance / Digital Ocean droplet
 
 - Create a ubuntu 22.04 LTS AWS EC2 instance / Digital Ocean droplet
@@ -55,7 +55,7 @@ POSTGRES_DB_PASSWORD="example"
   - [X] Frontend tests
   - [X] Backend tests
   - [X] Cypress tests
-- [ ] Deploy app
-  - [ ] TLS certs
+- [X] Deploy app
+  - [X] TLS certs
   - [X] deploy application with ./deploy.sh
   - [X] setup Digital Ocean droplet with ./setup.sh
