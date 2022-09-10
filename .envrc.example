@@ -1,0 +1,5 @@
+export TETRIS_URL="tetris.zfz7.org"
+export TETRIS_SSH_USER="root"
+
+export POSTGRES_PASSWORD="example"
+export SSL_KEY_STORE_PASSWORD="example"
